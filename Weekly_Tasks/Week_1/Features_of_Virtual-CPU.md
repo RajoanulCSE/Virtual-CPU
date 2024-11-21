@@ -1,31 +1,15 @@
-### Instruction Set:
-- **ADD**: Addition of two registers.
-- **SUB**: Subtraction of two registers.
-- **MOV**: Move data between registers.
-- **JMP**: Jump to a specified instruction (control flow).
-- **LOAD**: Load data from memory into a register.
-- **STORE**: Store data from a register into memory.
+# Features of Virtual CPU (vCPU)
 
-### Registers:
-- **General-purpose registers**: R0-R15.
-- **Special-purpose registers**:
-  - **Program Counter (PC)**: Tracks the address of the next instruction.
-  - **Stack Pointer (SP)**: Points to the current top of the stack.
-  - **Status Flags**: Includes Zero, Carry, Overflow flags for conditional operations.
+A **virtual CPU (vCPU)** is an abstraction of a physical CPU assigned to a virtual machine (VM) in a virtualization environment. Key features include:
 
-### Memory:
-- Simple array-based memory model to simulate RAM.
-- Basic read and write operations for memory addresses.
+- **Abstraction from Hardware**: vCPUs represent a portion of physical CPU resources managed by the hypervisor.
+- **Resource Allocation**: The number of vCPUs is configurable based on VM requirements, with the possibility of overcommitting resources.
+- **Independent Operation**: Each VM operates with its own isolated vCPU(s), even though resources are shared.
+- **Time-Slicing**: The hypervisor schedules vCPUs on physical cores using time-sharing to ensure efficient execution.
+- **CPU Affinity**: vCPUs can be pinned to specific physical cores for better performance in certain scenarios.
+- **Performance Impact**: vCPUs share physical resources, so performance can be affected by resource contention or overcommitment.
+- **Dynamic Scaling**: vCPUs can be added or removed dynamically based on workload needs.
+- **Virtual NUMA**: Large VMs with multiple vCPUs may simulate NUMA to optimize memory access.
+- **Security Isolation**: vCPUs provide strong isolation between VMs, enhancing security in virtualized environments.
 
-### Clock Cycles:
-- Simulate instruction execution with clock cycles, where each instruction takes one or more cycles to execute.
-
-### Interrupts:
-- Basic interrupt handling for simulating halting the CPU or triggering system calls.
-
-### I/O Operations:
-- Basic **input/output** operations:
-  - **PRINT**: Output a value to the console.
-  - **READ**: Input a value from the user.
-
----
+These features allow vCPUs to provide flexibility, scalability, and efficient resource management in virtualized systems.
