@@ -1,43 +1,43 @@
+# Week 5: Memory Management
 
-Certainly! Below is a basic documentation in Markdown format that you can include in your .md file in VS Code for your "Memory Management for the Virtual CPU" project.
-
-Week 5: Memory Management
-Objective
+## Objective
 This project aims to simulate memory management for a virtual CPU. It involves setting up a simulated memory space, implementing memory read/write operations, and handling address mapping and memory segmentation.
 
-Tasks
-1. Set Up a Simulated Memory Space
-Goal: Create a simulated memory space that can be divided into different segments (code, data, and stack).
-Implementation: A memory model was created using a vector of bytes (std::vector<uint8_t>) to represent the memory. Each byte in the vector represents one unit of memory.
-2. Implement Memory Read/Write Operations
-Goal: Implement functions that allow reading from and writing to the simulated memory.
-Implementation: The functions write() and read() allow data to be written to or read from specific memory addresses. The memory is organized into three segments, and the address checks are done within the bounds of these segments.
-3. Handle Address Mapping and Memory Segmentation
-Goal: Organize the memory into different segments and map addresses to these segments.
-Implementation: The memory is divided into three parts:
-Code Segment: Stores the program code (addresses from 0 to 99).
-Data Segment: Stores the variables/data (addresses from 100 to 199).
-Stack Segment: Stores stack data (addresses from 200 to 299).
-Memory Layout
+## Tasks
+### 1. Set Up a Simulated Memory Space
+- **Goal**: Create a simulated memory space that can be divided into different segments (code, data, and stack).
+- **Implementation**: A memory model was created using a vector of bytes (`std::vector<uint8_t>`) to represent the memory. Each byte in the vector represents one unit of memory.
+
+### 2. Implement Memory Read/Write Operations
+- **Goal**: Implement functions that allow reading from and writing to the simulated memory.
+- **Implementation**: The functions `write()` and `read()` allow data to be written to or read from specific memory addresses. The memory is organized into three segments, and the address checks are done within the bounds of these segments.
+
+### 3. Handle Address Mapping and Memory Segmentation
+- **Goal**: Organize the memory into different segments and map addresses to these segments.
+- **Implementation**: The memory is divided into three parts:
+  - **Code Segment**: Stores the program code (addresses from 0 to 99).
+  - **Data Segment**: Stores the variables/data (addresses from 100 to 199).
+  - **Stack Segment**: Stores stack data (addresses from 200 to 299).
+
+## Memory Layout
 The memory is divided into three segments:
+1. **Code Segment**:
+   - Starts at address `0` and ends at address `99`.
+2. **Data Segment**:
+   - Starts at address `100` and ends at address `199`.
+3. **Stack Segment**:
+   - Starts at address `200` and ends at address `299`.
 
-Code Segment:
-Starts at address 0 and ends at address 99.
-Data Segment:
-Starts at address 100 and ends at address 199.
-Stack Segment:
-Starts at address 200 and ends at address 299.
 Each segment has a defined base address:
+- **Code Base**: `0`
+- **Data Base**: `100`
+- **Stack Base**: `200`
 
-Code Base: 0
-Data Base: 100
-Stack Base: 200
-Memory Operations
-Write Operation
-The write() function allows data to be written into the memory at a specific segment and address.
+## Memory Operations
+### Write Operation
+The `write()` function allows data to be written into the memory at a specific segment and address.
 
-cpp
-Copy code
+```cpp
 void write(size_t base, size_t address, uint8_t value);
 base: The starting address of the memory segment (code, data, stack).
 address: The address within the segment to write the value to.
@@ -110,3 +110,9 @@ Paging and Virtual Memory: Implementing a virtual memory system with page tables
 Conclusion
 This project provides a basic simulation of memory management for a virtual CPU. It covers memory segmentation, address mapping, and basic memory operations like reading and writing. The implementation can be expanded with more advanced features like dynamic memory allocation, paging, and memory protection.
 
+yaml
+Copy code
+
+---
+
+You can save this content as a `.md` file in VS Code or any other text editor, and it will 
