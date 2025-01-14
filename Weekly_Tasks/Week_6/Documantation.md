@@ -79,7 +79,3 @@
 1. Simulated I/O functions for keyboard and display.
 2. Updated CPU with integrated `IN` and `OUT` instructions.
 3. Successfully tested programs demonstrating I/O functionality.
-
----
-
-Let me know if you need further refinements or detailed code snippets for any part!
